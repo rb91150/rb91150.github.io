@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 
 <html lang="fr">
 
@@ -284,10 +285,421 @@
 
     </script>
 
+=======
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio BTS SIO SLAM</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface-2:#f1f3f9;
+      --text:#14161a;
+      --muted:#5a6472;
+      --border: rgba(20,22,26,.10);
+      --shadow: 0 12px 30px rgba(17,24,39,.08);
+      --shadow-2: 0 10px 22px rgba(17,24,39,.10);
+      --brand:#3b82f6;
+      --brand-2:#2563eb;
+      --success:#16a34a;
+      --code:#0b1220;
+      --radius: 18px;
+      --radius-sm: 14px;
+      --max: 1100px;
+    }
+
+    body.dark-mode{
+      --bg:#0b0f17;
+      --surface:#101827;
+      --surface-2:#0f172a;
+      --text:#e5e7eb;
+      --muted:#a9b3c3;
+      --border: rgba(229,231,235,.12);
+      --shadow: 0 14px 34px rgba(0,0,0,.40);
+      --shadow-2: 0 12px 26px rgba(0,0,0,.45);
+      --brand:#22c55e;
+      --brand-2:#16a34a;
+      --success:#22c55e;
+      --code:#0b1220;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(59,130,246,.12), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(16,185,129,.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      transition: background-color .25s ease, color .25s ease;
+      line-height:1.6;
+    }
+
+    a{ color: var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    a:focus{ outline: 3px solid rgba(59,130,246,.35); outline-offset: 2px; border-radius: 10px; }
+
+    /* Top bar */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--surface) 75%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size: 16px;
+      letter-spacing:.3px;
+      font-weight: 800;
+      line-height:1.2;
+    }
+    .brand .subtitle{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    .theme-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 85%, transparent);
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      user-select:none;
+    }
+    .theme-toggle:hover{ transform: translateY(-1px); box-shadow: var(--shadow-2); }
+    .theme-toggle:active{ transform: translateY(0px); }
+    .theme-icon{ width: 18px; height: 18px; display:block; }
+    .toggle-label{ font-size: 12px; color: var(--muted); font-weight: 700; }
+
+    /* Nav */
+    nav{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 18px 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    nav a{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 86%, transparent);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing:.2px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    nav a:hover{
+      text-decoration:none;
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+      background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+    }
+    nav a.active-link{
+      border-color: color-mix(in srgb, var(--brand) 55%, var(--border));
+      background: color-mix(in srgb, var(--brand) 14%, var(--surface));
+      box-shadow: var(--shadow);
+    }
+
+    /* Layout */
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 46px;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 8px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{ padding: 18px; }
+    .card h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing:.2px;
+    }
+    .card p{ margin: 0 0 10px; color: var(--muted); font-weight: 600; }
+    .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 70%, var(--surface-2));
+      color: var(--text);
+    }
+
+    /* Logo block */
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height: 100%;
+      min-height: 220px;
+      background:
+        radial-gradient(320px 220px at 30% 25%, rgba(59,130,246,.16), transparent 60%),
+        radial-gradient(280px 200px at 75% 40%, rgba(16,185,129,.14), transparent 60%),
+        var(--surface-2);
+      border: 1px dashed color-mix(in srgb, var(--border) 85%, transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+
+    .logo{
+      width: min(70%, 240px);
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 18px 22px rgba(0,0,0,.12));
+    }
+
+    .animated-screen{
+      animation: floaty 3.2s ease-in-out infinite alternate;
+    }
+    @keyframes floaty{
+      0%{ transform: translateY(0px) scale(1); }
+      100%{ transform: translateY(-8px) scale(1.03); }
+    }
+
+    /* Sections */
+    .section{ display:none; }
+    .section.active{ display:block; animation: fadeIn .18s ease-out; }
+    @keyframes fadeIn{ from{ opacity:0; transform: translateY(4px);} to{ opacity:1; transform: translateY(0);} }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card-title{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .tag{
+      font-size: 11px;
+      font-weight: 900;
+      color: color-mix(in srgb, var(--brand) 85%, var(--text));
+      border: 1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+      background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+      padding: 7px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .list li{ margin: 8px 0; }
+
+    .linklist{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .linkitem{
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 80%, var(--surface-2));
+      border-radius: var(--radius-sm);
+      padding: 12px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .linkitem:hover{
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+      background: color-mix(in srgb, var(--brand) 8%, var(--surface));
+    }
+    .meta{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .titleline{
+      font-weight: 800;
+      color: var(--text);
+      font-size: 13px;
+      line-height:1.4;
+    }
+    .btn-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 85%, transparent);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing:.2px;
+      text-decoration:none;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+      box-shadow: var(--shadow);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      text-decoration:none;
+      border-color: color-mix(in srgb, var(--brand) 45%, var(--border));
+      background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+      box-shadow: var(--shadow-2);
+    }
+
+    .pdf{
+      width: 100%;
+      height: 600px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      margin-top: 14px;
+    }
+
+    .footnote{
+      margin-top: 12px;
+      padding: 12px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px dashed color-mix(in srgb, var(--border) 85%, transparent);
+      background: color-mix(in srgb, var(--surface) 65%, var(--surface-2));
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    /* Small utility */
+    .muted{ color: var(--muted); font-weight:600; }
+    .strong{ font-weight: 800; }
+  </style>
+
+  <script>
+    function setActiveLink(sectionId){
+      const links = document.querySelectorAll('nav a[data-section]');
+      links.forEach(a => a.classList.toggle('active-link', a.dataset.section === sectionId));
+    }
+
+    function showSection(sectionId, ev) {
+      if (ev) ev.preventDefault();
+      const sections = document.getElementsByClassName('section');
+      for (let i = 0; i < sections.length; i++) sections[i].classList.remove('active');
+      document.getElementById(sectionId).classList.add('active');
+      toggleLogo(sectionId);
+      setActiveLink(sectionId);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+      const themeIcon = document.getElementById('theme-icon');
+      const toggleText = document.getElementById('toggle-text');
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.src = 'icons/sun-icon.png';
+        toggleText.textContent = 'Mode clair';
+      } else {
+        themeIcon.src = 'icons/moon-icon.png';
+        toggleText.textContent = 'Mode sombre';
+      }
+    }
+
+    function toggleLogo(sectionId) {
+      const animatedLogo = document.getElementById('animated-logo');
+      const staticLogo = document.getElementById('static-logo');
+      if (sectionId === 'accueil') {
+        animatedLogo.style.display = 'block';
+        staticLogo.style.display = 'none';
+      } else {
+        animatedLogo.style.display = 'none';
+        staticLogo.style.display = 'block';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      toggleLogo('accueil');
+      setActiveLink('accueil');
+    });
+  </script>
+>>>>>>> 13c4a68 (Modification de la section contact)
 </head>
 
 <body>
 
+<<<<<<< HEAD
     <header>
 
         <h1>Portfolio BTS SIO</h1>
@@ -515,3 +927,466 @@
 </body>
 
 </html>
+=======
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div>
+        <h1>Portfolio BTS SIO — SLAM</h1>
+        <p class="subtitle">Raphaël Boee Bosale • Projets • Stage • Veille technologique</p>
+      </div>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème">
+      <img id="theme-icon" src="icons/moon-icon.png" alt="" class="theme-icon">
+      <span id="toggle-text" class="toggle-label">Mode sombre</span>
+    </button>
+  </div>
+
+  <nav>
+    <a href="#" data-section="accueil" onclick="showSection('accueil', event)">Accueil</a>
+    <a href="#" data-section="apropos" onclick="showSection('apropos', event)">À propos</a>
+    <a href="#" data-section="cv" onclick="showSection('cv', event)">CV</a>
+    <a href="#" data-section="tp-ap" onclick="showSection('tp-ap', event)">TP/AP</a>
+    <a href="#" data-section="veille" onclick="showSection('veille', event)">Veille techno</a>
+    <a href="#" data-section="notes" onclick="showSection('notes', event)">Notes de synthèse</a>
+    <a href="#" data-section="contact" onclick="showSection('contact', event)">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- HERO (visible on every page but logo changes) -->
+  <div class="hero">
+    <div class="card">
+      <div class="card-inner">
+        <h2>Bienvenue 👋</h2>
+        <p>
+          Ce portfolio présente mes réalisations (TP/AP), mes documents de stage (notes de synthèse),
+          et ma veille technologique. Objectif : montrer mes compétences en <span class="strong">développement</span>,
+          <span class="strong">conception</span> et <span class="strong">cybersécurité</span>.
+        </p>
+        <div class="badge-row">
+          <span class="badge">BTS SIO</span>
+          <span class="badge">SLAM</span>
+          <span class="badge">Projets & TP</span>
+          <span class="badge">Veille (Robotique + XDR)</span>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn" href="#" onclick="showSection('tp-ap', event)">Voir mes TP/AP</a>
+          <a class="btn" href="#" onclick="showSection('veille', event)">Voir ma veille</a>
+          <a class="btn" href="#" onclick="showSection('contact', event)">Me contacter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-wrap">
+      <img id="animated-logo" src="icons/animated-screen.svg" alt="Logo animé" class="logo animated-screen">
+      <img id="static-logo" src="icons/animated-screen.png" alt="Logo" class="logo" style="display:none;">
+    </div>
+  </div>
+
+  <!-- ACCUEIL -->
+  <div id="accueil" class="section active">
+    <div class="grid">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-title">
+            <h2>Accueil</h2>
+            <span class="tag">Vue d’ensemble</span>
+          </div>
+          <p class="muted">
+            Bienvenue sur le portfolio de <span class="strong">Raphaël Boee Bosale</span>,
+            étudiant en BTS Services Informatiques aux Organisations (SIO), spécialité <span class="strong">SLAM</span>.
+          </p>
+          <div class="footnote">
+            Astuce : utilise le menu en haut pour naviguer rapidement entre les sections.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-title">
+            <h2>Ce que tu trouveras ici</h2>
+            <span class="tag">BTS SIO</span>
+          </div>
+          <ul class="list">
+            <li><span class="strong">TP/AP</span> classés par blocs (Support, Développement, Cybersécurité).</li>
+            <li><span class="strong">Notes de synthèse</span> : synthèse de mes stages et compétences développées.</li>
+            <li><span class="strong">Veille technologique</span> : Robotique médicale + XDR (cybersécurité).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A PROPOS -->
+  <div id="apropos" class="section">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-title">
+          <h2>À propos</h2>
+          <span class="tag">Profil</span>
+        </div>
+
+        <p class="muted">
+          Je suis un étudiant proactif, rigoureux et collaboratif, passionné par le développement web,
+          la gestion de projets informatiques et la cybersécurité.
+        </p>
+
+        <p class="muted">
+          Le BTS Services Informatiques aux Organisations (SIO) prépare aux métiers de l’informatique en entreprise.
+          Il propose deux spécialités :
+        </p>
+
+        <ul class="list">
+          <li><span class="strong">SISR</span> : gestion et maintenance des infrastructures systèmes et réseaux.</li>
+          <li><span class="strong">SLAM</span> : conception et développement d’applications et solutions métiers.</li>
+        </ul>
+
+        <p class="muted">
+          En SLAM, j’ai renforcé mes compétences en programmation, développement d’applications et gestion de bases de données,
+          afin de concevoir des solutions adaptées aux besoins des utilisateurs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CV -->
+  <div id="cv" class="section">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-title">
+          <h2>CV</h2>
+          <span class="tag">Téléchargement</span>
+        </div>
+
+        <p class="muted">Mon curriculum vitae peut être téléchargé ici :</p>
+
+        <div class="btn-row">
+          <a class="btn" href="assets/Cv de Raphael BOEE BOSALE.pdf" download="Cv de Raphael BOEE BOSALE.pdf">Télécharger le CV (PDF)</a>
+          <a class="btn" href="assets/Cv de Raphael BOEE BOSALE.jpg" download="Cv de Raphael BOEE BOSALE.jpg">Télécharger le CV (JPEG)</a>
+        </div>
+
+        <div class="footnote">
+          Tu peux également le visualiser directement ci-dessous.
+        </div>
+
+        <div style="margin-top:14px;">
+          <img src="assets/Cv de Raphael BOEE BOSALE.jpg" alt="CV de Raphaël Boee Bosale" style="max-width:100%; height:auto; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TP/AP -->
+  <div id="tp-ap" class="section">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-title">
+          <h2>TP / AP</h2>
+          <span class="tag">Compétences</span>
+        </div>
+
+        <p class="muted">
+          Tout au long de l’année, j’ai participé à divers travaux pratiques (TP) et activités professionnelles (AP).
+          Les documents ci-dessous m’ont permis de développer des compétences techniques, méthodologiques et professionnelles.
+        </p>
+
+        <div class="grid" style="margin-top:14px;">
+          <div class="card" style="box-shadow:none;">
+            <div class="card-inner">
+              <div class="card-title">
+                <h2 style="font-size:15px;margin:0;">Bloc 1</h2>
+                <span class="tag">Support</span>
+              </div>
+              <ul class="linklist">
+                <li class="linkitem">
+                  <div class="meta">TP</div>
+                  <div class="titleline">Compte-rendu TP 1 — “AVEC Quincaillerie”</div>
+                  <a href="https://docs.google.com/document/d/1-SX1yobb9ZavpjUcQSXuMpkWsxi-P8B6Jj-p-egJnno/edit" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">TP</div>
+                  <div class="titleline">Compte-rendu TP5</div>
+                  <a href="https://docs.google.com/document/d/1wXUBFIVVhMD8Y8ZFg-A4ysg3I09LLWv9DicFUMPXsgY/edit" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">TP</div>
+                  <div class="titleline">Compte-rendu TP3</div>
+                  <a href="https://docs.google.com/document/d/1K7Xh8KeMvhkTFeVcvZbHofxcO54uMv72p8Zs4xGNPQM/edit" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">TP</div>
+                  <div class="titleline">Compte-rendu TP1</div>
+                  <a href="https://docs.google.com/document/d/13aPRPmXsFaRUtNFQZWZi6Y75AvgFGsQ7iJFEVjUnJb4/edit" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none;">
+            <div class="card-inner">
+              <div class="card-title">
+                <h2 style="font-size:15px;margin:0;">Bloc 2</h2>
+                <span class="tag">Développement</span>
+              </div>
+              <ul class="linklist">
+                <li class="linkitem">
+                  <div class="meta">TP Java</div>
+                  <div class="titleline">Chapitre 2 — Bases de la POO en Java (Compte-rendu)</div>
+                  <a href="https://docs.google.com/document/d/1BoM9TgUvuwtGtiEJTEH74_rEww1tQYuUFdjsHhMWCcw/edit" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">TP Bloc 2</div>
+                  <div class="titleline">TP Java — Document 1</div>
+                  <a href="https://docs.google.com/document/d/1MuRtv-FcUkUlhYBol94hBxkwEXYBaskr-Bw8zK5HTnY/edit?tab=t.0#heading=h.lji7njmu5xfk" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">TP Bloc 2</div>
+                  <div class="titleline">TP Java — Document 2</div>
+                  <a href="https://docs.google.com/document/d/1RPD1Y_MQjrRbSP_XDVok9Hxq8SZcs4CKwkSZfm7OC70/edit?tab=t.0" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none;">
+            <div class="card-inner">
+              <div class="card-title">
+                <h2 style="font-size:15px;margin:0;">Bloc 3</h2>
+                <span class="tag">Cybersécurité</span>
+              </div>
+              <ul class="linklist">
+                <li class="linkitem">
+                  <div class="meta">TD</div>
+                  <div class="titleline">TD 3 — Protéger l’identité numérique de l’organisation</div>
+                  <a href="https://docs.google.com/document/d/1hkh3vbuma3c1_l0AY2FvY8iVF9f4inzcjAsd9pZVHsk/edit" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none;">
+            <div class="card-inner">
+              <div class="card-title">
+                <h2 style="font-size:15px;margin:0;">Activités pro</h2>
+                <span class="tag">AP</span>
+              </div>
+              <ul class="linklist">
+                <li class="linkitem">
+                  <div class="meta">AP</div>
+                  <div class="titleline">Projet de développement d’application</div>
+                  <a href="https://docs.google.com/document/d/12xZrQyRDkq7NNlOGKZnzQUYsys-Vr2S3LZH7aEMD4XA/edit" target="_blank" rel="noopener">Ouvrir le document</a>
+                </li>
+              </ul>
+              <div class="footnote">
+                Chaque document est classé par bloc pour faciliter la lecture (jury / recruteur).
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VEILLE -->
+  <div id="veille" class="section">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-title">
+          <h2>Veille technologique</h2>
+          <span class="tag">Robotique + XDR</span>
+        </div>
+
+        <p class="muted">
+          La veille technologique consiste à se tenir informé des évolutions et innovations du numérique,
+          afin d’anticiper les tendances et de comprendre les enjeux actuels.
+        </p>
+
+        <div class="grid" style="margin-top:14px;">
+          <div class="card" style="box-shadow:none;">
+            <div class="card-inner">
+              <div class="card-title">
+                <h2 style="font-size:15px;margin:0;">Veille principale</h2>
+                <span class="tag">Robotique médicale</span>
+              </div>
+
+              <ul class="linklist">
+                <li class="linkitem">
+                  <div class="meta">01/11/2023</div>
+                  <div class="titleline">Conicio, Staubli Robotics et SQI innovent pour la robotique médicale</div>
+                  <a href="https://www.ledauphine.com/economie/2023/11/01/conicio-staubli-robotics-et-sqi-innovent-pour-la-robotique-medicale" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">19/12/2023</div>
+                  <div class="titleline">Robot qui surveille l’état émotionnel des personnes âgées</div>
+                  <a href="https://www.leparisien.fr/economie/innovation-et-sante/ce-robot-veille-a-letat-emotionnel-des-personnes-agees-19-12-2022-LBSPZ3VWJFFFJNCJ7QW63WHEK4.php" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">10/01/2024</div>
+                  <div class="titleline">OncoRad dévoile un nouveau robot chirurgical high-tech</div>
+                  <a href="https://www.challenge.ma/chirurgie-oncorad-devoile-son-nouveau-robot-high-tech-282630/" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">15/02/2024</div>
+                  <div class="titleline">Caranx Medical — Implantation / assistance robotique</div>
+                  <a href="https://www.investincotedazur.com/caranx-medical-implantation-assistance-robotique/" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">09/03/2024</div>
+                  <div class="titleline">Da Vinci 5 et évolution de la chirurgie robot-assistée</div>
+                  <a href="https://www.lefigaro.fr/sciences/un-robot-francais-pour-neutraliser-le-cancer-20240309" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">17/12/2024</div>
+                  <div class="titleline">Robots au service d’une chirurgie moins invasive</div>
+                  <a href="https://www.lefigaro.fr/conjoncture/les-robots-au-service-d-une-chirurgie-moins-invasive-20241217" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">22/01/2025</div>
+                  <div class="titleline">Nouvelle technique française — reconstruction de la mâchoire</div>
+                  <a href="https://sante.lefigaro.fr/medecine/une-nouvelle-technique-francaise-revolutionne-la-reconstruction-de-la-machoire-20250122" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">13/02/2025</div>
+                  <div class="titleline">Institut Curie + Google — IA pour le diagnostic du cancer féminin</div>
+                  <a href="https://sante.lefigaro.fr/medecine/l-institut-curie-s-allie-a-google-pour-passer-les-cancers-feminins-au-crible-de-l-ia-20250213" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">20/03/2025</div>
+                  <div class="titleline">Sant Pau (Barcelone) — robot Da Vinci SP à incision unique</div>
+                  <a href="https://cadenaser.com/cataluna/2025/03/20/lhospital-de-sant-pau-incorpora-el-robot-quirurgic-mes-avancat-de-la-sanitat-publica-espanyola-sercat/" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none;">
+            <div class="card-inner">
+              <div class="card-title">
+                <h2 style="font-size:15px;margin:0;">Veille complémentaire</h2>
+                <span class="tag">XDR</span>
+              </div>
+
+              <ul class="linklist">
+                <li class="linkitem">
+                  <div class="meta">21/08/2025</div>
+                  <div class="titleline">IAM + Zero Trust + XDR (focus identité)</div>
+                  <a href="https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2025/adaptive-identity-is-the-future-of-iam-and-zero-trust-alone-wont-get-us-there" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">01/09/2025</div>
+                  <div class="titleline">Outils CSPM 2025 (sécurité Cloud intégrée à l’XDR)</div>
+                  <a href="https://www.sentinelone.com/cybersecurity-101/cloud-security/cspm-tools/" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">16/06/2025</div>
+                  <div class="titleline">Intégrer SIEM, SOAR et XDR (automatisation des réponses)</div>
+                  <a href="https://www.balbix.com/insights/integrating-siem-soar-and-xdr-for-advanced-detection-and-response/" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">04/12/2025</div>
+                  <div class="titleline">Gestion des risques Cloud (priorisation via IA)</div>
+                  <a href="https://www.trendmicro.com/fr_fr/research/25/k/cloud-risk-management.html" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+                <li class="linkitem">
+                  <div class="meta">2025</div>
+                  <div class="titleline">Panorama des plateformes XDR (vue d’ensemble)</div>
+                  <a href="https://www.checkpoint.com/fr/cyber-hub/tools-vendors/best-xdr-platforms-for-2025/" target="_blank" rel="noopener">Lire l’article</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ petit “truc” demandé : conclusion de veille -->
+        <div class="footnote" style="margin-top:16px;">
+          <span class="strong">Conclusion de veille :</span>
+          Cette veille m’a permis de mieux comprendre l’évolution des systèmes informatiques dans des domaines critiques
+          comme la santé et la cybersécurité. Elle renforce mon intérêt pour la conception de solutions
+          <span class="strong">fiables</span>, <span class="strong">sécurisées</span> et adaptées aux besoins des organisations.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div id="notes" class="section">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-title">
+          <h2>Notes de synthèse</h2>
+          <span class="tag">Stage</span>
+        </div>
+
+        <p class="muted">
+          Une note de synthèse est un document professionnel rédigé à l’issue d’un stage.
+          Elle présente de manière claire et structurée le contexte de l’entreprise, les missions réalisées,
+          les outils utilisés et les compétences développées. Elle met en évidence la capacité de l’étudiant
+          à analyser son expérience et à en extraire l’essentiel.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn" href="assets/Note de synthèse.pdf" download="Note de synthèse.pdf">Télécharger — Note de synthèse (1re année)</a>
+          <a class="btn" href="assets/Note de Synthèse SIO 2 Raphael BOEE BOSALE 2.pdf" download="Note de Synthèse SIO 2 - Raphaël BOEE BOSALE.pdf">Télécharger — Note de synthèse (2e année)</a>
+        </div>
+
+        <div class="grid" style="margin-top:14px;">
+          <div>
+            <div class="meta" style="margin-bottom:8px;">Aperçu — 1re année</div>
+            <div class="pdf">
+              <object data="assets/Note de synthèse.pdf" type="application/pdf" width="100%" height="600px">
+                <p class="muted" style="padding:12px;">
+                  Votre navigateur ne prend pas en charge les PDF. Vous pouvez télécharger le fichier :
+                  <a href="assets/Note de synthèse.pdf">Télécharger le PDF</a>.
+                </p>
+              </object>
+            </div>
+          </div>
+
+          <div>
+            <div class="meta" style="margin-bottom:8px;">Aperçu — 2e année</div>
+            <div class="pdf">
+              <object data="assets/Note de Synthèse SIO 2 Raphael BOEE BOSALE 2.pdf" type="application/pdf" width="100%" height="600px">
+                <p class="muted" style="padding:12px;">
+                  Votre navigateur ne prend pas en charge les PDF. Vous pouvez télécharger le fichier :
+                  <a href="assets/Note de Synthèse SIO 2 Raphael BOEE BOSALE 2.pdf">Télécharger le PDF</a>.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="section">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-title">
+          <h2>Contact</h2>
+          <span class="tag">Coordonnées</span>
+        </div>
+        <ul class="list">
+          <li><span class="strong">Téléphone :</span> 06.24.99.94.30</li>
+          <li><span class="strong">Email :</span> raphael.boeebosale.pro@gmail.com</li>
+        </ul>
+        <div class="footnote">
+          Disponible pour stage / alternance / projets — réponse rapide par email.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+>>>>>>> 13c4a68 (Modification de la section contact)
